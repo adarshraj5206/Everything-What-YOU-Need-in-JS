@@ -1,0 +1,150 @@
+Day 1: JavaScript Basics (Part 1)
+________________________________________
+Hinglish Explanation
+
+1️.Variables (Containers for Data)
+Variables ek tarah ke containers hote hain jo kisi bhi value (data) ko store kar sakte hain. JavaScript me variables declare karne ke liye var, let, aur const ka use hota hai.
+let name = "Aman";  // String type variable
+const age = 25;      // Number type variable
+var city = "Delhi";  // Old way (not recommended)
+•	let → Re-assign ho sakta hai (recommended).
+•	const → Ek baar assign ho gaya toh change nahi hoga.
+•	var → Purana tariqa hai, ab avoid karna chahiye.
+2️. Data Types (Types of Values)
+JavaScript me mainly 2 types ke data types hote hain:
+✔ Primitive Data Types (Fixed size, directly store hoti hai)
+•	String → "Hello"
+•	Number → 25, 3.14
+•	Boolean → true, false
+•	Undefined → Jab koi variable declare ho but value assign na ho.
+•	Null → Jab intentionally khali value assign karein.
+•	Symbol → Unique value generate karta hai.
+•	BigInt → Badi numbers ke liye.
+✔ Non-Primitive Data Types (Objects, arrays, functions)
+•	Object → {name: "Aman", age: 25}
+•	Array → ["apple", "mango", "banana"]
+•	Function → Ek block of code jo reuse ho sakta hai.
+let person = {name: "Aman", age: 25};  // Object
+let fruits = ["Apple", "Mango"];       // Array
+function greet() { return "Hello"; }   // Function
+3️. Operators (Maths & Logic)
+Operators ka use calculations aur comparisons ke liye hota hai.
+✅ Arithmetic Operators (Math ke liye)
+•	+ (Addition)
+•	- (Subtraction)
+•	* (Multiplication)
+•	/ (Division)
+•	% (Modulus - remainder)
+•	** (Exponent - power)
+✅ Comparison Operators (Compare karne ke liye)
+•	== (Value equal hai?)
+•	=== (Value & Type dono equal hai?)
+•	!= (Not equal)
+•	!== (Not equal with type check)
+•	> (Greater than)
+•	< (Less than)
+•	>= (Greater than or equal to)
+•	<= (Less than or equal to)
+✅ Logical Operators (Conditions ke liye)
+•	&& (AND) → Dono true honi chahiye.
+•	|| (OR) → Koi ek true ho toh chalega.
+•	! (NOT) → Opposite result dega.
+let x = 10, y = 5;
+console.log(x > y);  // true (Comparison)
+console.log(x + y);  // 15 (Arithmetic)
+console.log(x > 5 && y < 10); // true (Logical)
+
+Scope in programming means where a variable or function can be accessed in your code.
+There are mainly two types of scope:
+1.	Global Scope – Variables declared outside functions can be used anywhere in the code.
+2.	Local Scope – Variables declared inside a function can only be used inside that function.
+In JavaScript, there are also:
+•	Block Scope – Variables declared with let or const inside {} can’t be accessed outside.
+•	Function Scope – Variables declared inside a function (var) are only available in that function.
+
+________________________________________
+How to Answer in an Interview?
+👉 Q: What are variables in JavaScript?
+A: "Variables are like containers that store data values. In JavaScript, we declare variables using let, const, or var. let allows reassignment, const is for fixed values, and var is the old way, which is not recommended now."
+👉 Q: What are the data types in JavaScript?
+A: "JavaScript has two types of data types: primitive and non-primitive. Primitive types include String, Number, Boolean, Undefined, Null, Symbol, and BigInt. Non-primitive types include Objects, Arrays, and Functions. Primitive types store direct values, while non-primitive types store references."
+👉 Q: What are operators in JavaScript?
+A: "Operators in JavaScript are used for performing operations like arithmetic calculations, comparisons, and logic-based conditions. Some common operators are +, -, *, / for arithmetic, >, <, ==, === for comparison, and &&, ||, ! for logical operations."
+________________________________________
+
+Common Interview Questions & Answers
+1️. Variables
+👉 Q: What is a variable in JavaScript?
+A: "A variable is a container for storing data. We use let, const, or var to declare variables."
+👉 Q: Difference between let, const, and var?
+A:
+•	let → Can be updated, but not re-declared.
+•	const → Cannot be changed or re-declared.
+•	var → Old way, allows re-declaration and has function scope.
+👉 Q: What is hoisting in JavaScript?
+A: "Hoisting means JavaScript moves variable and function declarations to the top before execution. var is hoisted with undefined, but let and const are hoisted but not initialized."
+console.log(x); // undefined  
+var x = 10;
+________________________________________
+2️. Data Types
+👉 Q: What are the data types in JavaScript?
+A: "There are two types: Primitive (String, Number, Boolean, Undefined, Null, Symbol, BigInt) and Non-Primitive (Object, Array, Function)."
+👉 Q: What is the difference between null and undefined?
+A:
+•	null → Manually assigned empty value.
+•	undefined → Variable declared but no value assigned.
+👉 Q: Is JavaScript dynamically typed?
+A: "Yes, JavaScript is dynamically typed, meaning variables can hold any data type and change type at runtime."
+________________________________________
+3️. Operators
+👉 Q: What are operators in JavaScript?
+A: "Operators perform operations. There are Arithmetic (+, -, *), Comparison (>, <, ==), and Logical (&&, ||, !)."
+👉 Q: Difference between == and ===?
+A:
+•	== → Checks value only (loose comparison).
+•	=== → Checks value + type (strict comparison).
+👉 Q: What is the difference between && and ||?
+A:
+•	&& (AND) → Both conditions must be true.
+•	|| (OR) → Any one condition can be true.
+________________________________________
+Tricky Interview Questions & Answers
+1️. Variables (Tricky Questions)
+👉 Q: What happens if we use const with an object?
+A: "You can't reassign the object, but you can modify its properties."
+const person = { name: "Aman" };
+person.name = "Rohan";  // ✅ Allowed
+person = { age: 25 };   // ❌ Error
+👉 Q: Can we declare a variable without var, let, or const?
+A: "Yes, but it becomes a global variable, which is bad practice."
+x = 10;  // Becomes global
+👉 Q: What will be the output?
+console.log(a);
+let a = 10;
+A: "It will give a ReferenceError because let is hoisted but not initialized."
+________________________________________
+2️. Data Types (Tricky Questions)
+👉 Q: Why is typeof null in JavaScript "object"?
+A: "It's a historical bug in JavaScript, but null is actually a primitive type."
+👉 Q: What will be the output?
+console.log(typeof NaN);
+A: "number" → Because NaN (Not a Number) is still considered a special type of number.
+👉 Q: What is the output?
+console.log([] == []);
+A: "false" → Because arrays are objects, and objects are compared by reference, not value.
+________________________________________
+3. Operators (Tricky Questions)
+👉 Q: What is the output?
+console.log(0 == "0"); 
+console.log(0 === "0");
+A:
+•	0 == "0" → true (Type conversion happens).
+•	0 === "0" → false (Strict comparison, different types).
+👉 Q: What happens if we do "5" - 2 and "5" + 2?
+A:
+•	"5" - 2 → 3 (String converted to number).
+•	"5" + 2 → "52" (String concatenation).
+👉 Q: What will be the output?
+console.log(true + true);
+A: 2 → Because true is treated as 1, so 1 + 1 = 2.
+________________________________________
