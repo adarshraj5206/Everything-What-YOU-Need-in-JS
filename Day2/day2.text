@@ -1,0 +1,168 @@
+Day – 2 Functions, Scope, Hoisting
+________________________________________ Hinglish Explanation
+1️. Functions
+JavaScript mein function ek block of code hota hai jo specific task perform karta hai. Jab hum function ko define karte hain, toh usko baar-baar use kar sakte hain bina code ko repeat kiye.
+✅ Example:
+function greet(name) {  
+    console.log("Hello, " + name + "!");  
+}  
+greet("Aman"); // Output: Hello, Aman!
+Yeh function "greet" ek naam lega aur usko greet karega.
+2️. Scope (Local vs Global)
+Scope ka matlab hai ki kahan se hum kisi variable ko access kar sakte hain.
+•	Global Scope: Agar koi variable function ke bahar declare kiya gaya hai, toh woh globally accessible hoga.
+•	Local Scope: Agar koi variable ek function ke andar declare kiya gaya hai, toh woh sirf usi function ke andar access hoga.
+✅ Example:
+let globalVar = "I am global";  
+
+function checkScope() {  
+    let localVar = "I am local";  
+    console.log(globalVar); // ✅ Accessible  
+    console.log(localVar);  // ✅ Accessible  
+}  
+
+console.log(globalVar); // ✅ Accessible  
+console.log(localVar);  // ❌ Error: localVar is not defined  
+Local variable function ke bahar access nahi hoga.
+3️. Hoisting
+Hoisting ka matlab hai JavaScript pehle variables aur functions ko memory mein upar shift kar deta hai execution se pehle.
+✅ Example:
+console.log(x);  // Output: undefined  
+var x = 10;  
+console.log(x);  // Output: 10  
+Is code mein x ka declaration pehle ho gaya (hoisting ki wajah se), isiliye pehla console.log(x) undefined return karega, lekin error nahi aayega.
+Agar hum let ya const use karein toh hoisting toh hoti hai, but initialization nahi hoti:
+console.log(y);  // ❌ ReferenceError  
+let y = 20;  
+Functions bhi hoist hote hain:
+sayHello(); // ✅ Works due to hoisting  
+
+function sayHello() {  
+    console.log("Hello World!");  
+}
+________________________________________
+How to Answer in Interviews (Simple English)
+Q1: What is a function in JavaScript?
+👉 A function is a reusable block of code that performs a specific task. It helps in writing clean and efficient code. We can call a function whenever we need it instead of writing the same code again and again.
+✅ Example Answer:
+"In JavaScript, a function is used to perform a task when called. It helps in reusability and keeps the code clean. For example, if we want to greet users, we can create a function and call it whenever needed instead of writing the same code multiple times."
+________________________________________
+Q2: What is scope in JavaScript?
+👉 Scope defines where a variable can be accessed in JavaScript. There are two main types of scope: Global Scope and Local Scope. A global variable can be accessed anywhere in the code, whereas a local variable is limited to the function where it is declared.
+✅ Example Answer:
+"Scope in JavaScript means the availability of variables. If a variable is declared inside a function, it can only be used inside that function (Local Scope). If it is declared outside any function, it can be accessed anywhere in the code (Global Scope)."
+________________________________________
+Q3: What is hoisting in JavaScript?
+👉 Hoisting is JavaScript’s default behavior of moving function and variable declarations to the top of their scope before executing the code. This means we can use a function or a var variable before actually declaring them.
+✅ Example Answer:
+"Hoisting means JavaScript moves function and variable declarations to the top of the code before execution. That’s why we can call a function before declaring it. But, if we use let or const, the variable will not be initialized before declaration."
+________________________________________
+
+ Interview Questions on Functions, Scope, and Hoisting
+1️. What is a function in JavaScript?
+👉 A function is a reusable block of code that performs a specific task. It helps in reusability and better code organization.
+✅ Short Answer:
+"A function in JavaScript is used to execute a block of code whenever needed. It makes the code reusable and structured."
+________________________________________
+2️. What are function parameters and arguments?
+👉 Parameters are placeholders in a function, and arguments are actual values passed to the function.
+✅ Short Answer:
+"Parameters are variables inside the function, and arguments are values we pass when calling the function."
+________________________________________
+3️. What is scope in JavaScript?
+👉 Scope defines where a variable can be accessed. It can be global or local (inside a function).
+✅ Short Answer:
+"Scope decides if a variable is accessible in the whole code (global) or only inside a function (local)."
+________________________________________
+4️. What is global scope and local scope?
+👉 Global scope means the variable is accessible everywhere, while local scope means the variable is limited to a function.
+✅ Short Answer:
+"A globally scoped variable can be used anywhere, but a locally scoped variable is accessible only inside a function."
+________________________________________
+5️. What is hoisting in JavaScript?
+👉 Hoisting is JavaScript's behavior of moving variable and function declarations to the top before execution.
+✅ Short Answer:
+"Hoisting means JavaScript moves function and var variable declarations to the top, so we can use them before declaring."
+________________________________________
+6️. Does hoisting work with let and const?
+👉 Yes, but they are not initialized before declaration, so using them early gives an error.
+✅ Short Answer:
+"Yes, but let and const are hoisted in a different way and give an error if used before declaration."
+________________________________________
+7️. What is the difference between var, let, and const?
+✅ Short Answer:
+•	var – Function-scoped, can be re-declared, hoisted with undefined.
+•	let – Block-scoped, can be updated but not re-declared, hoisted without initialization.
+•	const – Block-scoped, cannot be updated or re-declared.
+
+Tricky JavaScript Interview Questions on Functions, Scope, and Hoisting
+1️. Can we call a function inside itself?
+👉 Yes, it’s called recursion. A function calling itself is useful for problems like factorial or loops without using for or while.
+✅ Short Answer:
+"Yes, a function can call itself. This is called recursion, and it helps in solving problems like factorial or tree traversals."
+________________________________________
+2️. What happens if we declare a variable without var, let, or const inside a function?
+👉 It becomes a global variable automatically, which is bad practice.
+✅ Short Answer:
+"If a variable is declared without var, let, or const inside a function, it becomes global, which can cause unexpected issues."
+✅ Example:
+function test() {  
+    x = 10;  // Becomes global  
+}  
+test();  
+console.log(x); // Works but bad practice!  
+________________________________________
+3️. What happens if two functions have a variable with the same name?
+👉 Each function has its own local scope, so they won’t affect each other.
+✅ Short Answer:
+"If two functions have a variable with the same name, they stay separate because of local scope."
+✅ Example:
+function func1() {  
+    let x = 10;  
+    console.log(x); // 10  
+}  
+function func2() {  
+    let x = 20;  
+    console.log(x); // 20  
+}  
+________________________________________
+4️. Can function hoisting work with function expressions?
+👉 No, function expressions (like arrow functions) are not hoisted.
+✅ Short Answer:
+"No, only function declarations are hoisted. Function expressions and arrow functions don’t get hoisted."
+✅ Example:
+hello(); // ❌ Error  
+var hello = function() {  
+    console.log("Hi!");  
+};  
+________________________________________
+5️. What happens if we return a function inside another function?
+👉 It creates a closure, meaning the inner function remembers the variables of the outer function.
+✅ Short Answer:
+"Returning a function inside another function creates a closure, allowing the inner function to remember outer function variables."
+✅ Example:
+function outer() {  
+    let count = 0;  
+    return function inner() {  
+        count++;  
+        console.log(count);  
+    };  
+}  
+const counter = outer();  
+counter(); // 1  
+counter(); // 2  
+________________________________________
+6️. What will be the output of this code?
+var x = 5;  
+function test() {  
+    console.log(x);  
+    var x = 10;  
+}  
+test();  
+👉 Output: undefined (not 5 or 10)
+✅ Short Answer:
+"Due to hoisting, var x is moved to the top inside test(), but it remains undefined until it's assigned 10."
+✅ Explanation:
+•	var x = 10; is hoisted inside test(), so console.log(x); prints undefined, not the global 5.
+________________________________________
+
